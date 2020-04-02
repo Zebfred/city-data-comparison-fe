@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import Carousel, { Dots } from '@brainhubeu/react-carousel';
-import '@brainhubeu/react-carousel/lib/style.css';
+// import Carousel, { Dots } from '@brainhubeu/react-carousel';
+// import '@brainhubeu/react-carousel/lib/style.css';
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 
 const CategoryContainer = styled.div`
     width: 870px;
@@ -55,13 +57,14 @@ const SCPrestaurants = (props) => {
             <CategoryContainer>
                 <CategoryTitle>Restaurants</CategoryTitle>
                 <CategoryInfo>
-                <Carousel
+                {/* <Carousel
                     dots={true}
                     infinite
                     slidesPerPage={1}
                     clickToChange={true}
                     itemWidth={290}
-                    >    
+                    >     */}
+                    {/* <Carousel> */}
                 {props.restaurants.businesses ? props.restaurants.businesses.map(item => (
                     <CategoryImgContainer>
                         <CategoryImg src={item.image_url} />
@@ -69,11 +72,12 @@ const SCPrestaurants = (props) => {
                         <CategoryWebsite href={item.url} target="_blank" >Website</CategoryWebsite>
                     </CategoryImgContainer>
                 )) : null }
-                </Carousel>
+                {/* </Carousel> */}
+                {/* </Carousel> */}
                 </CategoryInfo>
             </CategoryContainer>
         </>
     )
-}
+} 
 
 export default SCPrestaurants;
